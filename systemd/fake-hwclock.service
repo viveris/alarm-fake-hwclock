@@ -3,12 +3,12 @@ Description=Fake Hardware Clock
 Documentation=man:fake-hwclock(8)
 DefaultDependencies=no
 Conflicts=shutdown.target
-Wants=fake-hwclock.timer
+Wants=fake-hwclock.timer data.mount
+After=data.mount
 
 [Service]
 Type=simple
 ExecStart=/usr/bin/fake-hwclock
-ExecStop=/usr/bin/fake-hwclock
 
 [Install]
 WantedBy=basic.target
